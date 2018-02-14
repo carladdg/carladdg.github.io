@@ -1,2 +1,2 @@
 # carladdg.github.io
-My Personal GitHub Pages Site
+My Personal GitHub pages site
