@@ -61,7 +61,7 @@
 
 .navigation-links a:active {
     color: #4aaaa5;
-    text-decoration: underline #4aaaa5;
+    text-shadow: 0px 0px 20px #4aaaa5;
 }
 
 .pipe {
@@ -157,6 +157,19 @@
     margin-top: 1em;
     margin-bottom: 1.5em;
     width: 275px;
+    height: 206.250px;
+}
+
+.portfolio-project img:hover, .icon-container img:hover {
+    box-shadow: 0px 0px 20px #4aaaa5;
+}
+
+.portfolio-project img:active, .icon-container img:active {
+    box-shadow: 0px 0px 50px #4aaaa5;
+}
+
+.ignore img:hover, .ignore img:active {
+    box-shadow: none;
 }
 
 .portfolio-project p {
