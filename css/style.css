@@ -2,6 +2,7 @@
     background-image: url("../img/circles-light.png");
     display: flex;
     flex-direction: column;
+    transition: flex-direction 0.5s;
 }
 
 .navigation-bar {
@@ -12,6 +13,8 @@
     height: 75px;
     justify-content: space-between;
     position: fixed;
+    z-index: 1;
+    
     width: 100%;
 }
 
@@ -20,18 +23,16 @@
     background: #4aaaa5;
     display: flex;
     height: 73px;
-    margin-left: 220px;
+    margin-left: 15.25%;
     margin-right: 40px;
     width: 225px;
+    flex-shrink: 0;
+    transition: margin-left 0.5s, margin-right 0.5s;
 }
 
 .name h1 {
-    display: block;
     font-size: 1.67em;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0.67em auto;
     font-weight: bold;
     
     color: #ffffff;
@@ -40,13 +41,13 @@
 }
 
 .navigation-links {
-    align-items: center;
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
     justify-content: space-around;
     margin-left: 45px;
-    margin-right: 220px;
+    margin-right: 15.25%;
     width: 270px;
+    flex-shrink: 0;
 }
 
 .navigation-links a {
@@ -56,6 +57,11 @@
 
 .navigation-links a:hover {
     color: #4aaaa5;
+}
+
+.navigation-links a:active {
+    color: #4aaaa5;
+    text-decoration: underline #4aaaa5;
 }
 
 .pipe {
@@ -70,9 +76,8 @@
     margin-top: 75px;
 }
 
-.page-content h2 {
+.page-content h2, h3 {
     display: block;
-    font-size: 1.5em;
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     margin-left: 0;
@@ -83,6 +88,14 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-left: 25px;
     padding-right: 25px;
+}
+
+.page-content h2 {
+    font-size: 1.5em;
+}
+
+.page-content h3 {
+    font-size: 1.25em;
 }
 
 .page-content hr {
@@ -98,20 +111,23 @@
 .content-container {
     background: #ffffff;
     border: 1px solid #dddddd;
-    margin: 20px 40px 20px 220px;
+    margin: 20px 2% 20px 15.25%;
     width: 650px;
+    flex-shrink: 1;
 }
 
 .my-photo {
     float: left;
-    margin: 15px 20px 10px 25px;
-    width: 40%;
+    margin-top: 12px; 
+    margin-right: 15px; 
+    margin-bottom: 0px; 
+    margin-left: 25px;
+    width: 45%;
 }
 
 .content-container p {
-    display: block;
     margin-top: 1em;
-    margin-bottom: 1.5em;
+    margin-bottom: 0em;
     margin-left: 25px;
     margin-right: 25px;
 
@@ -120,12 +136,94 @@
     line-height: 1.5;
 }
 
+.content-container p:last-child {
+    margin-bottom: 1.5em;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 2px; 
+    margin-right: 2px;
+}
+
+.portfolio-project {
+    position: relative;
+    z-index: 0;
+}
+
+.portfolio-project img {
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    width: 275px;
+}
+
+.portfolio-project p {
+    background: #4aaaa5;
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: 50px;
+    width: 275px;
+    position: absolute;
+    left: -25px;
+    bottom: 20px;
+}
+
+/* .portfolio-project:last-child:nth-child(odd) {
+    margin-left: 23px;
+    margin-right: auto;
+} */
+
+.contact-form {
+    margin-top: 0.85em;
+    margin-bottom: 1.5em;
+    margin-left: 25px;
+    margin-right: 25px;
+
+    color: #777777;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+}
+
+#name, #email {
+    height: 30px;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dddddd;
+}
+
+#message {
+    height: 225px;
+    width: 100%;
+    resize: vertical;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dddddd;
+}
+
+#submit {    
+    background: #4aaaa5;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    height: 35px;
+    margin-top: 1em;
+    padding-bottom: 1px;
+    width: 110px;
+}
+
 .sidebar {
     background: #ffffff;
     border: 1px solid #dddddd;
-    margin: 20px 220px 20px 40px;
+    margin: 20px 15.25% 20px 2%;
     padding-bottom: 20px;
     width: 270px;
+    flex-shrink: 0;
 }
 
 .icon-container {
@@ -144,6 +242,7 @@
 }
 
 .large-icon {
+    margin-top: 0.5px;
     padding: 3.5px;
 }
 
@@ -165,4 +264,112 @@
     font-size: 0.75em;
     text-align: center;
     width: 100%;
+}
+
+@media screen and (max-width: 980px) {
+    .content-container {
+        min-width: 280px;
+    }
+    
+    .my-photo {
+        float: none;
+        width: 100%;
+        margin-left: auto;
+        margin-bottom: 0;
+        padding-left: 25px;
+        padding-right: 25px;       
+    }
+
+    .portfolio-project:last-child:nth-child(odd) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-content {
+        flex-direction: column;
+        transition: 0.5s;
+    }
+
+    .name {
+        margin-left: 5%;
+        transition: 0.5s;
+    }
+
+    .navigation-links {
+        margin-right: 5%;
+        transition: 0.5s;
+    }
+
+    .content-container {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 0px;
+        width: 90%;
+    }
+
+    .my-photo {
+        float: left;
+        margin-top: 12px; 
+        padding-right: 0px;
+        width: 45%;
+    }
+
+    .sidebar {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    .icon-container {
+        justify-content: flex-start;
+        margin-left: 22px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .navigation-bar {
+        flex-direction: column;
+    }
+
+    .name {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .navigation-links {
+        width: 100%;
+        height: 50px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 10%;
+        padding-right: 10%;
+        background: #ffffff;
+        border-bottom: 2px solid #cccccc;
+        align-items: center;
+        transition: background 0s;
+    }
+
+    .page-content {
+        margin-top: 123px;
+    }
+
+    .portfolio-container {
+        margin-left: 13px;
+        margin-right: 13px;
+    }
+}
+
+@media screen and (max-width: 1261px) and (min-width: 769px) {
+    .ignore {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .ignore {
+        display: none;
+    }
 }
